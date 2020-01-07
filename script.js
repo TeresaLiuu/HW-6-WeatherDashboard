@@ -8,13 +8,14 @@ $(document).ready(function () {
         $('.list-group').text(cityInput);
 
         $.ajax({
-            url:queryURL,
+            url: queryURL,
             method: 'GET'
-        }).then(function(response){
-            var cityName =response.name;
-            var cityTemp =response.main.temp;
-            var cityHumidity=response.main.humidity;
-            var cityWid=response.wind.speed;
+        }).then(function (response) {
+            var cityName = response.name;
+            var cityTemp = response.main.temp;
+            var cityHumidity = response.main.humidity;
+            var cityWind = response.wind.speed;
+            $('#tempInput').text(cityName + cityTemp + cityHumidity + cityWind);
 
 
         });
